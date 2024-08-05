@@ -89,7 +89,7 @@ import Logout from './pages/Logout';
 
 function App() {
   return (
-    <Router basename="/fitnessApp-client">
+    <Router basename="/">
       <UserProvider>
         <WorkoutProvider>
           <AppNavbar />
