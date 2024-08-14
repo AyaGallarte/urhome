@@ -21,10 +21,14 @@ export default function UserView({ productsData }) {
 
     const [expanded, setExpanded] = useState({});
 
+    console.log('here ' + productsData.length, productsData);
+
     return (
-        (productsData.length <= 0 ) ?
+        !productsData ? (
             <p>Loading...</p>
-            :
+          ) : productsData.length <= 0 ? (
+            <p>No products available</p>
+          )  :  (
             <Container className="container">
                 <h2 className="page-title text-center mt-4">Our Products</h2>
                 <Row className="mt-4">
@@ -62,6 +66,7 @@ export default function UserView({ productsData }) {
                     ))}
                 </Row>
             </Container>
+        )
     );
 }
 

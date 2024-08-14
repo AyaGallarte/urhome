@@ -6,8 +6,6 @@ import UpdateProduct from '../components/UpdateProduct';
 import ArchiveProduct from '../components/ArchiveProduct';
 
 export default function AdminView({ productsData, fetchData }) {
-
-
     const [products, setProducts] = useState([])
 
     useEffect(() => {
@@ -32,11 +30,6 @@ export default function AdminView({ productsData, fetchData }) {
         setProducts(productsArr)
 
     }, [productsData])
-
-    AdminView.propTypes = {
-      productsData: PropTypes.string.isRequired,
-      quantity: PropTypes.number.isRequired,
-    };
     
     return(
         <>

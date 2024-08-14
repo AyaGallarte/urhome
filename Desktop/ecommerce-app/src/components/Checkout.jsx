@@ -25,7 +25,7 @@ const checkOut = async (product) => {
     if (result.isConfirmed) {
         // User confirmed, proceed with checkout
         try {
-            const response = await fetch('https://ecommerce-api-9r0z.onrender.com/orders/checkout', {
+            const response = await fetch('hhttps://ecommerce-api-9r0z.onrender.com/orders/checkout', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

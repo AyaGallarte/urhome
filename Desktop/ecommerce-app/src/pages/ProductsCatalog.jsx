@@ -10,23 +10,41 @@ export default function ProductsCatalog() {
     const {user} = useContext(UserContext);
 
     const fetchData = () => {
-        let fetchUrl = user.isAdmin === true ? "https://ecommerce-api-9r0z.onrender.com/products/all" : "https://ecommerce-api-9r0z.onrender.com/products/active"
+        // Determine the fetch URL based on user role
+        let fetchUrl = user.isAdmin === true ? 
+            "https://ecommerce-api-9r0z.onrender.com/products/all" : 
+            "https://ecommerce-api-9r0z.onrender.com/products/active";
 
+        // Fetch the products data
         fetch(fetchUrl, {
             headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
+                // Conditionally add the Authorization header if a token is present
+                ...(localStorage.getItem('token') && { 
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                })
             }
         })
-        .then(res => res.json())
-        .then(data => {         
-            
-            if(data.message === "No product found"){
-                setProducts([])
-            } else {
-                setProducts(data.products);
+        .then(res => {
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
             }
+            return res.json();
+        })
+        .then(data => {
+            // Check if no products were found and update state accordingly
+            if (data.message === "No products found") {
+                setProducts([]);
+            } else {
+                setProducts(data.products || []);
+            }
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            // Handle the error, e.g., by setting an error message in the state
+            setProducts([]);  // Or any other error handling you prefer
         });
-    }
+    };
+
 
    useEffect(() => {
 

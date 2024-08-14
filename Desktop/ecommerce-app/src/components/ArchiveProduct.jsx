@@ -56,7 +56,7 @@ export default function ArchiveProduct({ product, isActive, fetchData }) {
 
     const activateToggle = async (product) => {
         try {
-            const response = await fetch(`http://localhost:4000/products/${product}/activate`, {
+            const response = await fetch(`https://ecommerce-api-9r0z.onrender.com/products/${product}/activate`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
