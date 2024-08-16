@@ -32,6 +32,7 @@ function App() {
   useEffect(() => {
      if (token !== null){
           fetch('https://ecommerce-api-9r0z.onrender.com/users/details', {
+      mode: 'cors',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
