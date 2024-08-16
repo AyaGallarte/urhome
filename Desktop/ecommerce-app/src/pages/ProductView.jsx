@@ -19,7 +19,6 @@ export default function ProductView(){
 
 	useEffect(() => {
 		
-
 		fetch(`https://ecommerce-api-9r0z.onrender.com/products/${productId}`)
 		.then(res => res.json())
 		.then(data => {

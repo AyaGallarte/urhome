@@ -3,7 +3,6 @@ import AdminView from '../components/AdminView';
 import UserView from '../components/UserView';
 import UserContext from '../context/UserContext';
 
-
 export default function ProductsCatalog() {
 
     const [products, setProducts] = useState([]);
@@ -15,7 +14,6 @@ export default function ProductsCatalog() {
             "https://ecommerce-api-9r0z.onrender.com/products/all" : 
             "https://ecommerce-api-9r0z.onrender.com/products/active";
 
-        // Fetch the products data
         fetch(fetchUrl, {
             headers: {
                 // Conditionally add the Authorization header if a token is present

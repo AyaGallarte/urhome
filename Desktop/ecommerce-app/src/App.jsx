@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
 import AppNavbar from './components/AppNavbar';
-
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Register from './pages/Register';

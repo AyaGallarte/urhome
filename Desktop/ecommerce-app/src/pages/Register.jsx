@@ -9,7 +9,6 @@ export default function Register() {
 
     const {user} = useContext(UserContext);
     const navigate = useNavigate(); 
-
     // State hooks to store the values of the input fields
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
