@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="URHome.Site1" %>
+
+<%@ Register Src="~/controls/Navbar.ascx" TagPrefix="uc1" TagName="Navbar" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URHome</title>
+    <%-- CSS --%>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link href="../css/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="../css/customStyleSheet.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <%-- Navbar --%>
+        <uc1:Navbar runat="server" ID="Navbar" />
+        <%-- Scripts --%>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <%-- Main Content Placeholder --%>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="master-footer">
+            <p>&copy All right reserved. <a class="footerlinks" href="#" target="_blank">Aya G.</a></p>
+        </footer>
+    </form>
+</body>
+</html>
